@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about TeraBox Video Player, our mission, and the team behind the innovation.">
+    <title>About Us - TeraBox Video Player</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
+
+
+           /* Apply box-sizing globally */
+           * {
+            box-sizing: border-box;
+            }
+
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #000000, #0a0a23);
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        
+         /* Header Menu */
+         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #222831;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #ff0000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        nav a {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 14px;
+            padding: 8px 12px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover,
+        nav a.active {
+            background-color: #ff0000;
+            color: #FFFFFF;
+            border-radius: 5px;
+        }
+
+                /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 20;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #FFFFFF;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .hamburger.open div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 10px 20px;
+                border-radius: 10px;
+                position: absolute;
+                top: 50px;
+                right: 10px;
+                z-index: 11;
+                box-sizing: border-box;
+            }
+            nav.show {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+
+
+        .about-container {
+            margin-top: 80px;
+            padding: 20px 5%;
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .about-container h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .about-container .mission {
+            background-color: #1c1c1c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            margin-top: 20px;
+        }
+
+        .about-container .mission h2 {
+            font-size: 28px;
+            color: #ff0000;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #222831;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="logo">TeraBox Downloader</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="navMenu">
+            <a href="#" class="active">About Us</a>
+            <a href="/features.html">Features</a>
+            <a href="/Contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="about-container">
+        <h1>About Us</h1>
+        <p>Welcome to TeraBox Video Player! Our mission is to simplify and enhance your video streaming and file management experience. 
+           Whether you're streaming videos directly from the cloud or downloading files securely, we've got you covered.</p>
+
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>At TeraBox Video Player, we aim to bridge the gap between technology and convenience. Our focus is to provide seamless, 
+               secure, and user-friendly solutions for video playback and file management, accessible to everyone.</p>
+        </div>
+
+        <p>Founded with the vision of making cloud-based media consumption hassle-free, we continuously strive to improve and innovate. 
+           Your satisfaction is our top priority, and we value your feedback as we grow together.</p>
+
+        <p>Thank you for choosing TeraBox Video Player. Let's create a better viewing experience, one feature at a time!</p>
+    </div>
+
+    <footer>
+        &copy; 2024 TeraBox Video Player. All Rights Reserved.
+    </footer>
+
+    <script>
+
+        function toggleMenu() {
+                    const navMenu = document.getElementById('navMenu');
+                    const hamburger = document.querySelector('.hamburger');
+                    navMenu.classList.toggle('show');
+                    hamburger.classList.toggle('open');
+                }
+    </script>  
+</body>
+</html>

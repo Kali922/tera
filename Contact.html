@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact us at TeraBox Video Player for inquiries, feedback, or support. We're here to help!">
+    <title>Contact Us - TeraBox Video Player</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+ 
+ 
+           /* Apply box-sizing globally */
+        * {
+            box-sizing: border-box;
+            }
+
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to top, #000000, #0a0a23);
+            color: #FFFFFF;
+            min-height: 100vh;
+        }
+
+       
+         /* Header Menu */
+         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #222831;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #ff0000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        nav a {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 14px;
+            padding: 8px 12px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover,
+        nav a.active {
+            background-color: #ff0000;
+            color: #FFFFFF;
+            border-radius: 5px;
+        }
+
+                /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 20;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #FFFFFF;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .hamburger.open div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 10px 20px;
+                border-radius: 10px;
+                position: absolute;
+                top: 50px;
+                right: 10px;
+                z-index: 11;
+                box-sizing: border-box;
+            }
+            nav.show {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+
+
+        .contact-container {
+            margin-top: 80px;
+            width: 90%;
+            max-width: 800px;
+            background-color: #1c1c1c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            box-sizing: border-box;
+        }
+
+        .contact-container h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .contact-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background-color: #FFFFFF;
+            color: #000000;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .submit-button {
+            padding: 12px;
+            background-color: #ff0000;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #e60000;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #222831;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="logo">TeraBox Downloader</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="navMenu">
+            <a href="/about.html">About Us</a>
+            <a href="/features.html">Features</a>
+            <a href="/Contact.html"  class="active">Contact</a>
+        </nav>
+    </header>
+
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <p>If you have any questions, feedback, or need assistance, feel free to reach out to us using the form below. We value your input and will get back to you as soon as possible.</p>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2024 TeraBox Video Player. All Rights Reserved.
+    </footer>
+
+    <script>
+
+
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+            navMenu.classList.toggle('show');
+            hamburger.classList.toggle('open');
+            } 
+
+
+
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for reaching out! Your message has been sent.');
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+</body>
+</html>
